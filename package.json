@@ -1,0 +1,24 @@
+{
+  "name": "vinbud",
+  "version": "1.0.0",
+  "description": "Scraping vinbud.is opening times",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koddsson/vinbud.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koddsson/vinbud/issues"
+  },
+  "homepage": "https://github.com/koddsson/vinbud",
+  "dependencies": {
+    "apis-endpoint": "git://github.com/MiniGod/apis-endpoint",
+    "lodash": "^3.2.0",
+    "x-ray": "^1.0.3"
+  }
+}
