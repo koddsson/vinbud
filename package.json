@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/koddsson/vinbud",
   "dependencies": {
-    "apis-endpoint": "git://github.com/MiniGod/apis-endpoint",
     "lodash": "^3.2.0",
     "x-ray": "^1.0.3"
   }

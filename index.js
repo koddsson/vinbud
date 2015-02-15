@@ -1,14 +1,8 @@
 var _ = require('lodash');
 var xray = require('x-ray');
-var endpoint = require('apis-endpoint')();
 
-module.exports = endpoint;
-
-/**
- * Search for Vínbúð opening times.
- * @param {String} name         Search by name
- */
-endpoint.get('/', function(req, res, fail) {
+exports.opening_times = function(query, callback) {
+  query = query || {};
   xray('https://www.vinbudin.is/desktopdefault.aspx/tabid-5/')
     .select([{
       $root: 'tbody tr',
@@ -35,10 +29,6 @@ endpoint.get('/', function(req, res, fail) {
         }
        return element;
       });
-      var query = {};
-      if (req.query.name) {
-        query[name] = req.query.name;
-      }
-      res.json(_.where(cleaned, query));
+      return callback(null, _.where(cleaned, query));
     });
-});
+};
