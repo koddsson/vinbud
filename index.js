@@ -20,6 +20,8 @@ exports.opening_times = function(query, callback) {
       var cleaned = _.map(array, function(element, index) {
         if (element.dates.trim() === '') {
           element = _.omit(element, 'dates');
+        } else {
+          element.dates = element.dates.trim();
         }
         if(element.name.trim() === '') {
           element.name = array[index-1].name;
@@ -27,6 +29,14 @@ exports.opening_times = function(query, callback) {
         if(element.phone.trim() === '') {
           element.phone = array[index-1].phone;
         }
+        _.each(element.opening_hours, function(value, index){
+          if (value === 'lokað') {
+            element.opening_hours[index] = false;
+          } else {
+            element.opening_hours[index] = value.split('-');
+          }
+        });
+        element.phone = element.phone.trim();
        return element;
       });
       return callback(null, _.where(cleaned, query));
