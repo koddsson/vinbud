@@ -1,6 +1,6 @@
 {
   "name": "vinbud",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scraping vinbud.is opening times",
   "main": "index.js",
   "scripts": {
