@@ -18,6 +18,7 @@
   "homepage": "https://github.com/koddsson/vinbud",
   "dependencies": {
     "lodash": "^3.2.0",
+    "request": "^2.55.0",
     "x-ray": "^1.0.3"
   }
 }

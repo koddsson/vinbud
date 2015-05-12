@@ -1,5 +1,17 @@
 var _ = require('lodash');
 var xray = require('x-ray');
+var request = require('request');
+
+// This method is super complicated, stand back!
+exports.items = function(callback) {
+  request('http://tldr.is/vinbud.json', function(err, res, body) {
+    if (err) {
+      callback(err);
+    } else {
+      callback(body);
+    }
+  });
+};
 
 exports.opening_times = function(query, callback) {
   query = query || {};
