@@ -8,7 +8,7 @@ exports.items = function(callback) {
     if (err) {
       callback(err);
     } else {
-      callback(body);
+      callback(null, body);
     }
   });
 };
